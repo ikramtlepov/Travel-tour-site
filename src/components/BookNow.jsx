@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 import SelectTourDestination from './pageComp/SelectTourDestination';
 import BookingForm from './pageComp/BookingForm';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
 
 const BookNow = ({ destinations, tours }) => {
-  const {accstatus} = useSelector(state => state.pageActionSlice)
+  const { accstatus } = useSelector(state => state.pageActionSlice);
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [selectedTour, setSelectedTour] = useState(null);
   const [userData, setUserData] = useState({ name: '', email: '' });
@@ -29,7 +29,7 @@ const BookNow = ({ destinations, tours }) => {
       
       const response = await axios.post('https://travel-data-p3vn.onrender.com', userBookingData);
       alert('Booking successful!');
-      setUserData({ name: '', email: '' });  
+      setUserData({ name: '', email: '' });
       setSelectedDestination(null);
       setSelectedTour(null);
     } catch (err) {
@@ -51,6 +51,7 @@ const BookNow = ({ destinations, tours }) => {
         tours={tours}
         setSelectedDestination={setSelectedDestination}
         setSelectedTour={setSelectedTour}
+        selectedDestination={selectedDestination}
       />
       <BookingForm onSubmit={handleBookingSubmit} />
       {loading && <p>Loading...</p>}
@@ -60,4 +61,3 @@ const BookNow = ({ destinations, tours }) => {
 };
 
 export default BookNow;
-

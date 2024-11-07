@@ -9,7 +9,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full md:w-3/4 flex flex-wrap justify-between">
-          {/* Колонки меню */}
+          
           <div className="w-[50%] sm:w-[25%] mb-4">
             <ul>
               <li>Seslendirme ve Alt Jazz</li>
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Нижняя часть футера */}
+      
       <div className="flex flex-col sm:flex-row justify-between items-center mt-6 border-t border-gray-600 pt-4">
         <button className="bg-gray-700 text-white px-4 py-2 rounded mb-4 sm:mb-0">Helmet KOD</button>
         <p className="text-gray-500 text-center sm:text-left">&copy; 1997-2021 Netflix, Inc.</p>

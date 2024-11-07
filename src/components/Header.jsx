@@ -3,7 +3,7 @@ import React from 'react'
 import Container from './pageComp/Container'
 import { Link, NavLink } from 'react-router-dom'
 import Button from './pageComp/Button'
-import { setSelectLang, toggleLang, toggleSidebar } from '../store/slices/pageActionSlice'
+import {  toggleSidebar } from '../store/slices/pageActionSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Header = () => {

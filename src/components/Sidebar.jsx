@@ -36,9 +36,10 @@ const Sidebar = () => {
         Sign Up
       </Button>
       </Link>
-      <Button addStyle={"py-[7px] duration-300 px-[15px] w-full text-[16px] bg-orange-500 text-white flex justify-start font-[600] items-center gap-2 shadow-sm rounded-md hover:bg-gray-100 active:scale-95"}>
+     <Link to={"/booknow"} onClick={() => dispatch(toggleSidebar())}>
+     <Button addStyle={"py-[7px] duration-300 px-[15px] w-full text-[16px] bg-orange-500 text-white flex justify-start font-[600] items-center gap-2 shadow-sm rounded-md hover:bg-gray-100 active:scale-95"}>
         Book Now
-      </Button>
+      </Button></Link>
     </div>
   </div>
   )

@@ -8,7 +8,7 @@ export const store = configureStore(
         reducer : {
             destinationSlice,
             tourSlice,
-            pageActionSlice
+            pageActionSlice,
         }
     }
 )

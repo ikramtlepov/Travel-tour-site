@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const registration = (url, value, { resetForm }) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       const res = await axios.post(`${url}/register`, value, {
         headers: {
@@ -10,7 +10,6 @@ export const registration = (url, value, { resetForm }) => {
       });
       console.log(res);
       resetForm();
-      console.log(res.data);
     } catch (err) {
       resetForm();
       console.log(err);
@@ -19,7 +18,7 @@ export const registration = (url, value, { resetForm }) => {
 };
 
 export const logIn = (url, value, { resetForm }) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       const res = await axios.post(`${url}/login`, value, {
         headers: {

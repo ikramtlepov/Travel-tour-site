@@ -13,7 +13,6 @@ const Home = () => {
   const { destinations, isDestLoad } = useSelector(state => state.destinationSlice);
   const [searchQuery, setSearchQuery] = useState('');
   const [Destinations, setDestinations] = useState([]);
-  console.log(destinations)
 
   useEffect(() => {
     setDestinations(destinations.destinations?.slice(0, 3));
