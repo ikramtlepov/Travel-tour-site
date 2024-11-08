@@ -61,10 +61,10 @@ const Registration = () => {
           try {
             if (isSignUp) {
               await dispatch(registration(baseUrl, value, { resetForm }));
-              toast.success("Registration successful!");
+              
             } else {
               await dispatch(logIn(baseUrl, value, { resetForm }));
-              toast.success("Logged in successfully!");
+              
             }
           } catch (error) {
             toast.error("Something went wrong!");
