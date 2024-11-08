@@ -52,7 +52,7 @@ const BookNow = ({ destinations, tours }) => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 min-h-[calc(100vh-180px)] bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold text-center mb-6">Book Your Tour</h1>
       <SelectTourDestination
         destinations={destinations}
