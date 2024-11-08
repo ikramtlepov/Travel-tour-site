@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Container from '../components/pageComp/Container'
 import TourCard from '../components/pageComp/TourCard'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +10,9 @@ const Tours = () => {
   const { selectedDest } = useSelector(state => state.pageActionSlice)
   console.log(typeof selectedDest)
   const dispatch = useDispatch()
+  useEffect(()=>{
+     window.scrollTo(0,0)
+  },[])
   return (
     <div>
     <Container>
