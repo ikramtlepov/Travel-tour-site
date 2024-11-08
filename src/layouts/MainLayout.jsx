@@ -8,20 +8,30 @@ import Footer from '../pages/Footer';
 import { setSelectedDest, toggleSidebar } from '../store/slices/pageActionSlice';
 import { ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
+
 const MainLayout = () => {
   const baseUrl = "https://travel-data-p3vn.onrender.com";
   const dispatch = useDispatch();
   const { showSidebar } = useSelector(state => state.pageActionSlice);
   const { pathname } = useLocation();
   
-  if (pathname !== "/tours") {
-    dispatch(setSelectedDest(null));
-  }
+  useEffect(() => {
+    if (pathname !== "/tours") {
+      dispatch(setSelectedDest(null));
+    }
+  }, [pathname, dispatch]);
 
   useEffect(() => {
-    dispatch(getAllDestData(`${baseUrl}/destinations`));
-    dispatch(getAllTourData(`${baseUrl}/offers`));
-  }, []);
+    const fetchData = async () => {
+      try {
+        await dispatch(getAllDestData(`${baseUrl}/destinations`));
+        await dispatch(getAllTourData(`${baseUrl}/offers`));
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+    fetchData();
+  }, [dispatch]);
 
   return (
     <div 

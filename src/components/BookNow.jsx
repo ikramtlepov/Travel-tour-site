@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+import { useAuth } from './pageComp/AuthContext'; 
+import { toast } from 'react-toastify'; // Import Toastify
 import SelectTourDestination from './pageComp/SelectTourDestination';
 import BookingForm from './pageComp/BookingForm';
+import axios from 'axios';
 
 const BookNow = ({ destinations, tours }) => {
   const { accstatus } = useSelector(state => state.pageActionSlice);
+  const { isAuthenticated } = useAuth(); // Access the authentication state
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [selectedTour, setSelectedTour] = useState(null);
   const [userData, setUserData] = useState({ name: '', email: '' });
@@ -15,6 +18,11 @@ const BookNow = ({ destinations, tours }) => {
   const handleBookingSubmit = async (values) => {
     if (!selectedDestination || !selectedTour) {
       alert("Please select a destination and a tour!");
+      return;
+    }
+
+    if (!isAuthenticated) {
+      toast.error('Please log in to complete the booking!');
       return;
     }
 
@@ -28,7 +36,7 @@ const BookNow = ({ destinations, tours }) => {
       };
       
       const response = await axios.post('https://travel-data-p3vn.onrender.com', userBookingData);
-      alert('Booking successful!');
+      toast.success('Booking successful!');
       setUserData({ name: '', email: '' });
       setSelectedDestination(null);
       setSelectedTour(null);

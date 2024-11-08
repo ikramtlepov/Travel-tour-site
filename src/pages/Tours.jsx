@@ -34,7 +34,7 @@ const Tours = () => {
           </div>
         ) : (
           <div>
-            {isTourLoad ? (
+            {isTourLoad ?  (
               <div className='grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[10px]'>
                 {[1, 2, 3, 4,5,6,7,8,9,10].map(i => (
                   <div className='rounded-md shadow-md border-[1px] h-[350px] w-[350px] animate-pulse bg-black bg-opacity-10' />
@@ -42,7 +42,7 @@ const Tours = () => {
               </div>
             ) : (
               <div className="mt-3 ">
-                <div className='grid grid-cols-[repeat(auto-fill,minmax(450px,1fr))] gap-[10px] '>
+                <div className='grid  justify-center grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[10px] '>
                   {tours.map(item => (
                     <TourCard item={item} key={item.id} />
                   ))}

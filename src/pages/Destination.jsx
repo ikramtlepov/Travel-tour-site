@@ -23,7 +23,7 @@ const Destination = () => {
                </Link>
             </div>
             <div className='flex-1 p-4'>
-               <video className="rounded-md w-full h-full" autoPlay loop muted playsInline>
+               <video className="rounded-md min-w-[calc(100vh-700px)] w-full h-full" autoPlay loop muted playsInline>
                   <source src="https://cdn.pixabay.com/video/2023/10/22/186115-877653483_large.mp4" type="video/mp4" />
                   <img src={videoImg} alt="Video preview" className="rounded-md w-full h-full" />
                </video>
@@ -36,7 +36,7 @@ const Destination = () => {
          ) : (
             <div className="mt-3 ">
                <h1 className="text-center text-[34px] font-semibold py-4 text-orange-500">All Destinations</h1>
-               <div className='grid grid-cols-[repeat(auto-fill,minmax(450px,1fr))] gap-[10px] '>
+               <div className='grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[10px] justify-center w-full '>
                   {destinations.destinations?.map((item, index) => (
                      <motion.div
                         key={item.id}

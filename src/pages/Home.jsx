@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className='min-w-[calc(100vh-400px)] bg-backgroundImage min-h-[calc(100vh-100px)] bg-no-repeat bg-center bg-cover text-white'>
+      <div className='min-w-[calc(100vh-700px)] bg-backgroundImage min-h-[calc(100vh-100px)] bg-no-repeat bg-center bg-cover text-white'>
         <Container>
           <div className="flex flex-col justify-center items-start py-10">
             <h1 className="sm:text-[80px] font-bold text-[50px]">

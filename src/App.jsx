@@ -29,7 +29,7 @@ const App = () => {
     )
   )
   return (
-    <AuthProvider> {/* Оборачиваем маршрутизатор в AuthProvider */}
+    <AuthProvider> 
     <RouterProvider router={router} />
   </AuthProvider>
   )
