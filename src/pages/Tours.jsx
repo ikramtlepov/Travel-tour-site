@@ -17,7 +17,7 @@ const Tours = () => {
         <h1 className='text-[24px] font-bold text-orange-500 py-3'>Tour Packages</h1>
         {selectedDest ? (
           <div>
-            <div className='grid grid-cols-[repeat(auto-fill,minmax(450px,1fr))] gap-[10px] '>
+            <div className='grid justify-center grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[10px] '>
               {tours.filter(tour => tour.destinationId === selectedDest).map(item => (
                 <TourCard item={item} key={item.id} />
               ))}
