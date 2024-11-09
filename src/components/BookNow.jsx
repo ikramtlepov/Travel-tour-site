@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAuth } from './pageComp/AuthContext'; 
-import { toast } from 'react-toastify'; // Import Toastify
+import { toast } from 'react-toastify'; 
 import SelectTourDestination from './pageComp/SelectTourDestination';
 import BookingForm from './pageComp/BookingForm';
 import axios from 'axios';
 
 const BookNow = ({ destinations, tours }) => {
   const { accstatus } = useSelector(state => state.pageActionSlice);
-  const { isAuthenticated } = useAuth(); // Access the authentication state
+  const { isAuthenticated } = useAuth(); 
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [selectedTour, setSelectedTour] = useState(null);
   const [userData, setUserData] = useState({ name: '', email: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  useEffect(()=>{
+    window.scrollTo(0,0)})
 
   const handleBookingSubmit = async (values) => {
     if (!selectedDestination || !selectedTour) {

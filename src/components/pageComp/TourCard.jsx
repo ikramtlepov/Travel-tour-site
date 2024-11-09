@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { div } from 'framer-motion/client';
 
 const TourCard = ({ item, className }) => {
   const navigate = useNavigate()
+  useEffect(()=>{
+    window.scrollTo(0,0)})
 
   return (
-   <motion.div
-      className={`p-[10px] rounded-md shadow-md border-[1px] h-full flex flex-col justify-between gap-2 group relative overflow-hidden ${className}`}
+  <div className='md:min-h-[calc(100vh-475px)]'>
+     <motion.div
+      className={`p-[10px] rounded-md shadow-md border-[1px] h-full  flex flex-col justify-between gap-2 group relative overflow-hidden ${className}`}
       initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }} 
       exit={{ opacity: 0, y: 20 }} 
@@ -21,7 +25,7 @@ const TourCard = ({ item, className }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
       </div>
-      <div className="absolute bottom-0 left-[30px] p-4 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
+      <div className="absolute  bottom-0 left-[30px] p-4 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white md:text-indigo-400">
         <h2 className="text-lg font-semibold">{item.title}</h2>
 
         
@@ -36,6 +40,7 @@ const TourCard = ({ item, className }) => {
         </button>
       </div>
     </motion.div>
+  </div>
   );
 };
 

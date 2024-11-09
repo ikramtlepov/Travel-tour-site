@@ -1,5 +1,5 @@
 // src/components/Registration.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -12,6 +12,8 @@ const Registration = () => {
   const { isSignUp } = useSelector((state) => state.pageActionSlice);
   const dispatch = useDispatch();
   const baseUrl = "https://travel-data-p3vn.onrender.com";
+  useEffect(()=>{
+    window.scrollTo(0,0)})
 
   const signUpValidationSchema = Yup.object({
     username: Yup.string()

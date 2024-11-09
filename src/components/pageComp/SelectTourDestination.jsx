@@ -17,7 +17,7 @@ const SelectTourDestination = ({ setSelectedDestination, setSelectedTour, select
         <select
           onChange={(e) => {
             setSelectedDestination(e.target.value);
-            setSelectedTour(null); // сбрасываем выбранный тур
+            setSelectedTour(null); 
           }}
           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
@@ -33,7 +33,7 @@ const SelectTourDestination = ({ setSelectedDestination, setSelectedTour, select
         <select
           onChange={(e) => setSelectedTour(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          disabled={!selectedDestination} // деактивируем, если не выбрано направление
+          disabled={!selectedDestination} 
         >
           <option value="">Choose Tour</option>
           {filteredTours?.map((tour) => (

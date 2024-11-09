@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import DestCard from '../components/pageComp/DestCard'
 import { useSelector } from 'react-redux'
 import Loading from '../components/pageComp/Loading'
@@ -10,6 +10,8 @@ import { motion } from 'framer-motion';
 
 const Destination = () => {
    const { destinations, isDestLoad } = useSelector(state => state.destinationSlice)
+   useEffect(()=>{
+      window.scrollTo(0,0)})
    return (
       <div className="mt-2">
       <Container>
