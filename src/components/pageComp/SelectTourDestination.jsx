@@ -22,7 +22,7 @@ const SelectTourDestination = ({ setSelectedDestination, setSelectedTour, select
           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
           <option value="">Choose Destination</option>
-          {destinations.destinations?.map((dest) => (
+          {destinations?.map((dest) => (
             <option key={dest.id} value={dest.id}>{dest.name}</option>
           ))}
         </select>

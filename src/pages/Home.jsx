@@ -15,10 +15,10 @@ const Home = () => {
   const [Destinations, setDestinations] = useState([]);
 
   useEffect(() => {
-    setDestinations(destinations.destinations?.slice(0, 3));
+    setDestinations(destinations?.slice(0, 3));
   }, [destinations]);
 
-  const filteredDestinations = destinations.destinations?.filter(dest =>
+  const filteredDestinations = destinations?.filter(dest =>
     dest.name.charAt(0).toLowerCase() === searchQuery.charAt(0).toLowerCase() ||
     dest.country.charAt(0).toLowerCase() === searchQuery.charAt(0).toLowerCase()
   );

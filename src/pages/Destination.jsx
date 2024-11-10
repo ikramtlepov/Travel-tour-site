@@ -39,7 +39,7 @@ const Destination = () => {
             <div className="mt-3 ">
                <h1 className="text-center text-[34px] font-semibold py-4 text-orange-500">All Destinations</h1>
                <div className='grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[10px] justify-center w-full '>
-                  {destinations.destinations?.map((item, index) => (
+                  {destinations?.map((item, index) => (
                      <motion.div
                         key={item.id}
                         initial={{ opacity: 0, y: 20 }}

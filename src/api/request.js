@@ -8,6 +8,7 @@ export const getAllDestData = (url) => {
         try {
             const res = await axios.get(url)
             dispatch(fetchedDestData(res.data))
+            console.log(res)
         } catch (err) {
             dispatch(fetchedDestDataErr(err.message))
         }
